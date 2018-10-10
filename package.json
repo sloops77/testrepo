@@ -1,0 +1,40 @@
+{
+  "name": "testrepo",
+  "version": "1.0.0",
+  "author": "Andres Olave <andres@thinkingbytes.net>",
+  "license": "unlicensed",
+  "repository": "https://github.com/sloops77/testrepo.git",
+  "homepage": "https://github.com/sloops77/testrepo",
+  "bugs": "https://github.com/sloops77/devgovnr/issues",
+  "keywords": [
+    "github",
+    "slack"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "dev": "nodemon --exec \"npm start\"",
+    "lint": "standard **/*.js --fix",
+    "test": "jest && standard **/*.js",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "jest": "^23.4.0",
+    "nodemon": "^1.17.2",
+    "prettier": "1.14.3",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": [
+      "jest"
+    ]
+  }
+}
