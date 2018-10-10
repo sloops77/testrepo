@@ -15,7 +15,7 @@
     "dev": "nodemon --exec \"npm start\"",
     "lint": "standard **/*.js --fix",
     "lint:nofix": "standard **/*.js",
-    "test": "jest --forceExit --verbose",
+    "test": "jest --verbose",
     "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test --watch --notify --notifyMode=change --coverage"
   },
@@ -27,6 +27,7 @@
     "babel-eslint": "^10.0.1",
     "coveralls": "^3.0.2",
     "jest": "^23.4.0",
+    "jest-junit": "^5.2.0",
     "nodemon": "^1.17.2",
     "prettier": "1.14.3",
     "standard": "^10.0.3"
@@ -39,5 +40,8 @@
     "env": [
       "jest"
     ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
