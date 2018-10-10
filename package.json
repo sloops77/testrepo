@@ -15,7 +15,8 @@
     "dev": "nodemon --exec \"npm start\"",
     "lint": "standard **/*.js --fix",
     "test": "jest && standard **/*.js",
-    "test:ci": "standard **/*.js && jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:ci": "standard **/*.js && npm run test:coveralls",
+    "test:coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
