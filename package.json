@@ -17,7 +17,7 @@
     "lint:nofix": "standard **/*.js",
     "test": "jest --verbose",
     "test:coverage": "npm test -- --coverage",
-    "test:watch": "npm test --watch --notify --notifyMode=change --coverage"
+    "test:watch": "npm test -- --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
     "lodash": "^4.17.11"

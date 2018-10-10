@@ -38,8 +38,8 @@ jobs:
           name: Lint and Test
           command: |
             mkdir -p ~/reports
-            npm run lint:nofix --format junit --output-file ~/reports/eslint.xml
-            npm run test:coverage --ci --coverageDirectory ~/reports --reporters jest-junit
+            npm run lint:nofix -- --format junit --output-file ~/reports/eslint.xml
+            npm run test:coverage -- --ci --coverageDirectory ~/reports --reporters jest-junit
           environment:
             JEST_JUNIT_OUTPUT: "~/reports/test-results.xml"
       - run:
