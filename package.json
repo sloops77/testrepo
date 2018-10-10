@@ -14,10 +14,10 @@
     "build": "babel src --out-dir lib",
     "dev": "nodemon --exec \"npm start\"",
     "lint": "standard **/*.js --fix",
-    "test": "jest && standard **/*.js",
-    "test:ci": "standard **/*.js && npm run test:coveralls",
-    "test:coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+    "lint:nofix": "standard **/*.js",
+    "test": "jest --forceExit --verbose",
+    "test:coverage": "npm test -- --coverage",
+    "test:watch": "npm test --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
     "lodash": "^4.17.11"
