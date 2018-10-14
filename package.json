@@ -14,8 +14,10 @@
     "build": "babel src --out-dir lib",
     "dev": "nodemon --exec \"npm start\"",
     "lint": "standard **/*.js --fix",
-    "test": "jest && standard **/*.js",
-    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+    "lint:nofix": "standard **/*.js",
+    "test": "jest --verbose",
+    "test:coverage": "npm test -- --coverage",
+    "test:watch": "npm test -- --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
     "lodash": "^4.17.11"
@@ -23,7 +25,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
+    "coveralls": "^3.0.2",
     "jest": "^23.4.0",
+    "jest-junit": "^5.2.0",
     "nodemon": "^1.17.2",
     "prettier": "1.14.3",
     "standard": "^10.0.3"
@@ -36,5 +40,8 @@
     "env": [
       "jest"
     ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
