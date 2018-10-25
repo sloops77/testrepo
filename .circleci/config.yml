@@ -34,6 +34,20 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: npm test
+      - run: 
+          name: Lint and Test
+          command: |
+            mkdir -p ~/reports
+            npm run lint:nofix -- --format junit --output-file ~/reports/eslint.xml
+            npm run test:coverage -- --ci --coverageDirectory ~/reports --reporters jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: "~/reports/test-results.xml"
+      - run:
+          name: Send Coverage
+          command: npx coveralls < ~/reports/lcov.info
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
 
 
